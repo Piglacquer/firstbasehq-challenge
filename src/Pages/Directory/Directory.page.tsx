@@ -1,12 +1,32 @@
 import React, { useState, useEffect } from 'react';
+import { useQuery, gql } from '@apollo/client';
+
+import EmployeeCard, { IEmployee } from '../../Components/EmployeeCard/EmployeeCard.Component';
 
 import './directory.styles.scss';
+interface IEmployees {
+	people: IEmployee[]
+};
 
+const GET_EMPLOYEES = gql`
+	query GetEmployees {
+		people {
+			id,
+			name { title, first, last },
+			picture { thumbnail }
+		}
+	}
+`;
+const LoadingTitle = () => <span>loading</span>;
 const DirectoryPage: React.FC = () => {
-	const [ employees, setEmployees ] = useState([]);
+	const { loading, error, data } = useQuery<IEmployees>(GET_EMPLOYEES);
+
 	return (
 		<div className='directory-container'>
-			directory
+			{loading && <LoadingTitle />}
+			{data && data.people.map(
+				({id, name, picture}) => <EmployeeCard key={id} name={name} picture={picture} id={id} />
+			)}
 		</div>
 	)
 };

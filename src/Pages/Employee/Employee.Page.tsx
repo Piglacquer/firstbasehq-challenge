@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './employee.styles.scss';
+import './employee.styles.scss'
 
 const Employee: React.FC = () => (
-	<div className='employee-container'>
-		IM AN EMPLOYEE
+	<div className='edit-employee-container'>
+		EMPLOYEE PAGE
 	</div>
 );
 
