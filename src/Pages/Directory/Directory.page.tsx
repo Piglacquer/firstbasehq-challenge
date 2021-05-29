@@ -12,12 +12,14 @@ const GET_EMPLOYEES = gql`
 	query GetEmployees {
 		people {
 			id,
-			name { title, first, last },
-			picture { thumbnail }
+			name { title, last },
+			picture { large }
 		}
 	}
 `;
+
 const LoadingTitle = () => <span>loading</span>;
+
 const DirectoryPage: React.FC = () => {
 	const { loading, error, data } = useQuery<IEmployees>(GET_EMPLOYEES);
 

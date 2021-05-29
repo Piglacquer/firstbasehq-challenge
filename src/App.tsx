@@ -14,7 +14,7 @@ const App:React.FC = () => (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/directory' component={Directory} />
-      <Route path = '/employee' component={Employee} />
+      <Route path = '/employee/:id' component={Employee} />
     </Switch>
   </div>
 );

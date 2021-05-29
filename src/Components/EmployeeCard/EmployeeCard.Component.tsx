@@ -11,25 +11,24 @@ export interface IEmployee {
 
 type Name = {
 	title: string,
-	first: string,
 	last: string,
 }
 
 type Picture = {
-	thumbnail: string,
+	large: string,
 }
 
 const Employee = ({id, name, picture}: IEmployee) => {
-	const { title, first, last } = name;
-	const { thumbnail } = picture;
+	const { title, last } = name;
+	const { large } = picture;
 
 	return (
-		<Link className='employee-container' to={{
-			pathname: '/employee',
-			search: `?${id}`
-		}}>
-			<img src={thumbnail}/>
-			<h2>{`${title} ${first} ${last}`}</h2>
+		<Link
+			className='employee-container' 
+			to={`employee/${id}`}
+			style={{backgroundImage:`url(${large})`}}
+		>
+			<h3 className='employee-name'>{`${title} ${last}`}</h3>
 		</Link>
 	)
 };

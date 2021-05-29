@@ -1,0 +1,15 @@
+.employee-container {
+	width: 128px;
+	height: 128px;
+	background-repeat: no-repeat;
+	justify-content: center;
+	align-items: flex-end;
+	display: flex;
+	margin: 5px;
+
+		.employee-name {
+			color: black;
+			font-size: 12px;
+			background-color: white;
+		}
+	}

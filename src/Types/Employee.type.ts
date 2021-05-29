@@ -1,18 +1,18 @@
 export interface IEmployee {
-	id: number,
-	email: string,
+	id: number | string,
+	email?: string,
 	picture?: Picture,
 	name?: Name,
 };
 
 export type Name = {
-	title: string,
-	first: string,
-	last: string,
+	title?: string,
+	first?: string,
+	last?: string,
 };
 
 export type Picture = {
-	large: string,
-	medium: string,
-	thumbnail: string,
+	large?: string,
+	medium?: string,
+	thumbnail?: string,
 };
