@@ -14,9 +14,10 @@ const EmployeeDetails:React.FC<Props> = ({ person, setEditEmployee }) => {
 
 	return (
 	<div className='employee-details-container'>
-		EMPLOYEE DETAILS
 		<h1 className='employee-name'>{`${name?.title} ${name?.first} ${name?.last}`}</h1>
-		<button onClick={() => setEditEmployee(true)}>Edit</button>
+		<img className='employee-image' src={person?.picture?.large} />
+		<span className='employee-email'>{`Email Address: ${email}`}</span>
+		<button className='button edit' onClick={() => setEditEmployee(true)}>Edit</button>
 	</div>
 )};
 

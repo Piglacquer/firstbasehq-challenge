@@ -7,7 +7,7 @@ import EmployeeDetails from '../../Components/EmployeeDetails/EmployeeDetails.Co
 
 import type { IEmployee } from '../../Types/Employee.type';
 
-import './employee.styles.scss'
+import './employee.styles.scss';
 
 const GET_EMPLOYEE = gql`
 	query GetEmployee($id: ID!) {
@@ -41,7 +41,7 @@ const Employee:React.FC = () => {
 	);
 
 	return (
-		<div className='edit-employee-container'>
+		<div className='employee-details-edit-container'>
 			{data && (
 				<>
 					{editEmployee ? (

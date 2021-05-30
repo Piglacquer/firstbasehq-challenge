@@ -1,0 +1,14 @@
+.employee-details-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+
+	.employee-name {
+		font-size: 5rem;
+	}
+
+	.employee-email {
+		justify-self: center;
+	}
+}

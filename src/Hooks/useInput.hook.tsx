@@ -12,8 +12,8 @@ type InputHook = {
 	bind: Bind,
 };
 
-const useInput = (initialValue: string): InputHook => {
-	const [ value, setValue ] = useState<string>(initialValue);
+const useInput = (initialValue: string | undefined): InputHook => {
+	const [ value, setValue ] = useState<string>(initialValue || '');
 
 	return {
 		value,
