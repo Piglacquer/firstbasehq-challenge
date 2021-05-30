@@ -11,11 +11,13 @@ import './App.css';
 const App:React.FC = () => (
   <div className="App">
     <Header />
-    <Switch>
-      <Route exact path='/' component={Home} />
-      <Route exact path='/directory' component={Directory} />
-      <Route path = '/employee/:id' component={Employee} />
-    </Switch>
+    <div className='body-container'>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/directory' component={Directory} />
+        <Route path = '/employee/:id' component={Employee} />
+      </Switch>
+    </div>
   </div>
 );
 

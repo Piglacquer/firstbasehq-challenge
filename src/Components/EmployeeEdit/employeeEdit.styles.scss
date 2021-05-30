@@ -1,0 +1,16 @@
+.employee-edit-container {
+	display: flex;
+	flex-direction: column;
+
+	.edit-form {
+		display: flex;
+		flex-direction: column;
+		width: 50vw;
+
+		.input-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+}

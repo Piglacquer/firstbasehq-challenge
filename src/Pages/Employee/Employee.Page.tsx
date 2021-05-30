@@ -35,7 +35,7 @@ type EmployeeData = {
 const Employee:React.FC = () => {
 	const [ editEmployee, setEditEmployee ] = useState<Boolean>(false);
 	const { id } = useParams<Params>();
-	const { loading, error, data } = useQuery<EmployeeData, EmployeeVars>(
+	const { loading, error, data, refetch } = useQuery<EmployeeData, EmployeeVars>(
 		GET_EMPLOYEE,
 		{ variables: { id } }
 	);
@@ -45,7 +45,7 @@ const Employee:React.FC = () => {
 			{data && (
 				<>
 					{editEmployee ? (
-						<EmployeeEdit person={data.person} setEditEmployee={setEditEmployee}/>
+						<EmployeeEdit person={data.person} setEditEmployee={setEditEmployee} refetchEmployee={refetch} />
 						) : null}
 					{!editEmployee ? (
 						<EmployeeDetails person={data.person} setEditEmployee={setEditEmployee} />							

@@ -1,9 +1,14 @@
 body {
 	font-family: 'Open Sans Condensed';
-	padding: 20px 80px;
 }
 
 a {
 	text-decoration: none;
 	color: black;
+}
+
+.body-container {
+	justify-content: center;
+	margin-left: 80px;
+	margin-right: 80px;
 }
