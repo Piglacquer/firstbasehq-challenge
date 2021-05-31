@@ -11,7 +11,7 @@ type Employees = {
 	people: IEmployee[],
 }
 
-const GET_EMPLOYEES = gql`
+export const GET_EMPLOYEES = gql`
 	query GetEmployees {
 		people {
 			id,
@@ -37,12 +37,21 @@ const SearchBar:React.FC = () => {
 				return `${person?.name?.first} ${person?.name?.last}`.toLowerCase().includes(searchValue.toLowerCase());
 			})
 			setFilteredResults(filteredResults);
+		} else {
+			setFilteredResults([]);
+			setShowResults(false);
 		}
 	}, [data, searchValue]);
 
 	return (
-		<div className='search-bar' onFocus={() => setShowResults(true)}>
-			<input className='search-input' {...searchBind} />
+		<div className='search-bar' data-testid='search-container'>
+			<input
+				className='search-input'
+				onFocus={() => setShowResults(true)}
+				{...searchBind}
+				data-testid='search-input'
+				placeholder='Search for employee'
+			/>
 			{showResults && <SearchResults filteredResults={filteredResults} resetField={resetField} />}
 		</div>
 )};

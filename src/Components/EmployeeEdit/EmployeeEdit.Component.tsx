@@ -39,19 +39,19 @@ const EDIT_EMPLOYEE = gql`
 
 const EmployeeEdit:React.FC<Props> = ({ person, setEditEmployee, refetchEmployee }) => {
 	const { name, picture, id, email } = person;
-	const { value: firstName, setValue: setFirstName, reset: resetFirstName, bind: bindFirstName } = useInput(name?.first);
-	const { value: lastName, setValue: setLastName, reset: resetLastName, bind: bindLastName } = useInput(name?.last);
-	const { value: title, setValue: setTitle, reset: resetTitle, bind: bindTitle } = useInput(name?.title);
-	const { value: emailAddress, setValue: setEmailAddress, reset: resetEmailAddress, bind: bindEmailAddress } = useInput(email);
+	const { value: firstName, reset: resetFirstName, bind: bindFirstName } = useInput(name?.first);
+	const { value: lastName, reset: resetLastName, bind: bindLastName } = useInput(name?.last);
+	const { value: title, reset: resetTitle, bind: bindTitle } = useInput(name?.title);
+	const { value: emailAddress, reset: resetEmailAddress, bind: bindEmailAddress } = useInput(email);
 	
 	const payload = {
 		first: firstName ? firstName : '',
 		last: lastName ? lastName : '',
 		title: title ? title : '',
-		email: email ? email : '',
+		email: emailAddress ? emailAddress : '',
 	}
 
-	const [saveEmployee, { error, data }] = useMutation<EmployeeData, EmployeeVars>(EDIT_EMPLOYEE, {
+	const [saveEmployee] = useMutation<EmployeeData, EmployeeVars>(EDIT_EMPLOYEE, {
 		variables: { id: id, payload: payload }
 	});
 	
@@ -66,7 +66,7 @@ const EmployeeEdit:React.FC<Props> = ({ person, setEditEmployee, refetchEmployee
 	return (
 		<div className='employee-edit-container'>
 			<h1 className='title'>{`Edit: ${title} ${firstName} ${lastName}`}</h1>
-			<img className='employee-image' src={picture?.large} />
+			<img className='employee-image' src={picture?.large} alt='human-with-some-hair' />
 			<form className='edit-form' onSubmit={(event) => submitHandler(event)}>
 				<div className='input-container'>
 					<label className='label'>Title</label>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 
 import EmployeeCard, { IEmployee } from '../../Components/EmployeeCard/EmployeeCard.Component';

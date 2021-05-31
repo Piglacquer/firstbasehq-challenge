@@ -2,4 +2,10 @@
 	position: absolute;
 	display: flex;
 	flex-direction: column;
+	
+	.result {
+		width: 200px;
+		height: 20px;
+		background-color: white;
+	}
 }

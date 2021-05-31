@@ -35,7 +35,7 @@ type EmployeeData = {
 const Employee:React.FC = () => {
 	const [ editEmployee, setEditEmployee ] = useState<Boolean>(false);
 	const { id } = useParams<Params>();
-	const { loading, error, data, refetch } = useQuery<EmployeeData, EmployeeVars>(
+	const { data, refetch } = useQuery<EmployeeData, EmployeeVars>(
 		GET_EMPLOYEE,
 		{ variables: { id } }
 	);

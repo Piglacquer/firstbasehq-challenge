@@ -5,21 +5,23 @@ import type { IEmployee } from '../../Types/Employee.type';
 
 import './searchResults.styles.scss';
 
-type Props = {
+export type SearchResultsProps = {
 	filteredResults: IEmployee[],
 	resetField: React.MouseEventHandler<HTMLAnchorElement>,
 }
 
-const SearchResults:React.FC<Props> = ({ filteredResults, resetField }) => {
+const SearchResults:React.FC<SearchResultsProps> = ({ filteredResults, resetField }) => {
 	return (
-		<div className='search-results-container'>
+		<div className='search-results-container' data-testid='results-container'>
 			{filteredResults.length === 0
-				? <span>No Results</span>
+				? <span className='result' data-testid='no-results'>No Results</span>
 				: filteredResults.map(result => (
 					<Link
+						key={result.id}
 						className='result'
 						to={`/employee/${result.id}`}
 						onClick={resetField}
+						data-testid='result'
 					>
 						{`${result?.name?.first} ${result?.name?.last}`}
 					</Link>
