@@ -46,10 +46,9 @@ const Employee:React.FC = () => {
 				<>
 					{editEmployee ? (
 						<EmployeeEdit person={data.person} setEditEmployee={setEditEmployee} refetchEmployee={refetch} />
-						) : null}
-					{!editEmployee ? (
-						<EmployeeDetails person={data.person} setEditEmployee={setEditEmployee} />							
-						) : null}
+						) : (
+						<EmployeeDetails person={data.person} setEditEmployee={setEditEmployee} />
+					)}
 				</>
 			)}
 		</div>
