@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './home.styles.scss';
+
 const HomePage: React.FC = () => (
 	<div className='home-container'>
-		home
+		<h1>Firstbase Coding Challenge</h1>
 	</div>
 );
 

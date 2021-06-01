@@ -1,16 +1,42 @@
 .employee-edit-container {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.employee-image {
+		width: 300px;
+		height: 300px;
+		margin-bottom: 10px;
+	}
 
 	.edit-form {
 		display: flex;
 		flex-direction: column;
 		width: 50vw;
+		justify-content: center;
 
 		.input-container {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
+			margin-bottom: 5px;
+		}
+
+		button {
+			width: 300px;
+			height: 30px;
+			border-radius: 5px;
+			align-self: center;
+			margin-bottom: 5px;
+
+			&.save {
+				background-color: rgb(79, 125, 79);
+			}
+
+			&.cancel {
+				background-color: rgb(112, 67, 67);
+			}
 		}
 	}
 }

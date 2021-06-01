@@ -1,7 +1,9 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 
-import EmployeeCard, { IEmployee } from '../../Components/EmployeeCard/EmployeeCard.Component';
+import EmployeeCard from '../../Components/EmployeeCard/EmployeeCard.Component';
+
+import type { IEmployee } from '../../Types/Employee.type';
 
 import './directory.styles.scss';
 interface IEmployees {
