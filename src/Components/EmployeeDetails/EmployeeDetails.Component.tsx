@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { IEmployee } from '../../Types/Employee.type';
+import type { IEmployee } from '../../Types';
 
 import './employeeDetails.styles.scss';
 

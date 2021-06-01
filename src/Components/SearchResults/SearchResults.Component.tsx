@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import type { IEmployee } from '../../Types/Employee.type';
+import type { IEmployee } from '../../Types';
 
 import './searchResults.styles.scss';
 

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import EmployeeCard from './EmployeeCard.Component';
 
-import type { IEmployee } from '../../Types/Employee.type';
+import type { IEmployee } from '../../Types';
 
 const props:IEmployee = {
 	id: '1',

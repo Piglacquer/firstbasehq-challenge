@@ -2,7 +2,7 @@ import React from 'react';
 import { gql, useMutation } from '@apollo/client';
 import { useInput } from '../../Hooks/useInput.hook';
 
-import type { IEmployee } from '../../Types/Employee.type'; 
+import type { IEmployee } from '../../Types'; 
 
 import './employeeEdit.styles.scss';
 

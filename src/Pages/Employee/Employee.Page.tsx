@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import EmployeeEdit from '../../Components/EmployeeEdit/EmployeeEdit.Component';
 import EmployeeDetails from '../../Components/EmployeeDetails/EmployeeDetails.Component';
 
-import type { IEmployee } from '../../Types/Employee.type';
+import type { IEmployee } from '../../Types';
 
 import './employee.styles.scss';
 

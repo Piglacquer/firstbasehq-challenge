@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { gql, useQuery } from '@apollo/client';
 
-import type { IEmployee } from '../../Types/Employee.type';
+import type { IEmployee } from '../../Types';
 import { useInput } from '../../Hooks/useInput.hook';
 import SearchResults from '../SearchResults/SearchResults.Component';
 

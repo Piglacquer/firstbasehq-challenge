@@ -3,7 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 
 import EmployeeCard from '../../Components/EmployeeCard/EmployeeCard.Component';
 
-import type { IEmployee } from '../../Types/Employee.type';
+import type { IEmployee } from '../../Types';
 
 import './directory.styles.scss';
 interface IEmployees {
@@ -23,7 +23,7 @@ const GET_EMPLOYEES = gql`
 const LoadingTitle = () => <span>loading</span>;
 
 const DirectoryPage: React.FC = () => {
-	const { loading, error, data } = useQuery<IEmployees>(GET_EMPLOYEES);
+	const { loading, data } = useQuery<IEmployees>(GET_EMPLOYEES);
 
 	return (
 		<div className='directory-container'>
