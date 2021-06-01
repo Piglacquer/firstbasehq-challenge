@@ -37,10 +37,9 @@ const SearchBar:React.FC = () => {
 				return `${person?.name?.first} ${person?.name?.last}`.toLowerCase().includes(searchValue.toLowerCase());
 			})
 			setFilteredResults(filteredResults);
-		} else {
+		} else if (searchValue === '') {
 			setFilteredResults([]);
-			setShowResults(false);
-		}
+		};
 	}, [data, searchValue]);
 
 	return (
@@ -48,6 +47,11 @@ const SearchBar:React.FC = () => {
 			<input
 				className='search-input'
 				onFocus={() => setShowResults(true)}
+				onBlur={() => {
+					if(filteredResults.length === 0) {
+						setShowResults(false);
+					};
+				}}
 				{...searchBind}
 				data-testid='search-input'
 				placeholder='Search for employee'

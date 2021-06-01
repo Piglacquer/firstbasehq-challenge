@@ -25,7 +25,7 @@ describe('EmployeeCard', () => {
 	it('should render without error', () => {
 		render(WrappedComponent(props));
 
-		const card = screen.getByTestId('employee-card')
+		const card = screen.getByTestId('employee-card');
 		expect(card).toBeDefined();
 	});
 

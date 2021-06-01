@@ -6,7 +6,7 @@ import type { IEmployee } from '../../Types/Employee.type';
 
 import './employeeEdit.styles.scss';
 
-type Props = {
+export type Props = {
 	person: IEmployee,
 	setEditEmployee: Function,
 	refetchEmployee: Function,
@@ -29,7 +29,7 @@ type EmployeeData = {
 	payload: Payload,
 };
 
-const EDIT_EMPLOYEE = gql`
+export const EDIT_EMPLOYEE = gql`
 	mutation EditPerson($id: ID!, $payload: EditPerson) {
 		editPerson(id: $id, payload: $payload) {
 			id
@@ -39,10 +39,10 @@ const EDIT_EMPLOYEE = gql`
 
 const EmployeeEdit:React.FC<Props> = ({ person, setEditEmployee, refetchEmployee }) => {
 	const { name, picture, id, email } = person;
-	const { value: firstName, reset: resetFirstName, bind: bindFirstName } = useInput(name?.first);
-	const { value: lastName, reset: resetLastName, bind: bindLastName } = useInput(name?.last);
-	const { value: title, reset: resetTitle, bind: bindTitle } = useInput(name?.title);
-	const { value: emailAddress, reset: resetEmailAddress, bind: bindEmailAddress } = useInput(email);
+	const { value: firstName, bind: bindFirstName } = useInput(name?.first);
+	const { value: lastName, bind: bindLastName } = useInput(name?.last);
+	const { value: title, bind: bindTitle } = useInput(name?.title);
+	const { value: emailAddress, bind: bindEmailAddress } = useInput(email);
 	
 	const payload = {
 		first: firstName ? firstName : '',
@@ -64,13 +64,13 @@ const EmployeeEdit:React.FC<Props> = ({ person, setEditEmployee, refetchEmployee
 	};
 
 	return (
-		<div className='employee-edit-container'>
+		<div className='employee-edit-container' data-testid='employee-edit-container'>
 			<h1 className='title'>{`Edit: ${title} ${firstName} ${lastName}`}</h1>
 			<img className='employee-image' src={picture?.large} alt='human-with-some-hair' />
 			<form className='edit-form' onSubmit={(event) => submitHandler(event)}>
 				<div className='input-container'>
 					<label className='label'>Title</label>
-					<input className='input' {...bindTitle}></input>
+					<input className='input' {...bindTitle} data-testid='title-edit'></input>
 				</div>
 				<div className='input-container'>
 					<label className='label'>First Name</label>
